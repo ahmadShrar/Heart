@@ -14,7 +14,7 @@ body {
 canvas {
   background: transparent;
   display: block;
-  width: 500px;
+  width: 480px;
   max-width: 600px;
   height: auto;
 }
@@ -65,7 +65,7 @@ button {
   background: linear-gradient(90deg, #ff4d4d, #b30000);
   color: white;
   top: 170px;
-  left: -50px;
+  left: -5px;
 }
 .yes:hover {
   transform: scale(1.1);
@@ -140,4 +140,4 @@ input[type="range"] {
 #letterR {
   top: 40%;
   left: 10%;
-}
+}}
