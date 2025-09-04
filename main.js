@@ -19,7 +19,6 @@ const toggleBtn = document.getElementById("toggleAnim");
 
 const ha = document.getElementById("Ha");
 
-// معادلة القلب
 function heartPoint(t) {
   const sin = Math.sin(t),
     cos = Math.cos(t);
@@ -28,8 +27,6 @@ function heartPoint(t) {
     13 * cos - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
   return { x, y };
 }
-
-// رسم القلب
 function drawHeartAsLines(segments = 600, animate = true) {
   const pts = [];
   for (let i = 0; i < segments; i++) {
@@ -37,7 +34,6 @@ function drawHeartAsLines(segments = 600, animate = true) {
     pts.push(heartPoint(t));
   }
 
-  // تحويل إحداثيات الشاشة
   let minx = Infinity,
     maxx = -Infinity,
     miny = Infinity,
@@ -104,7 +100,6 @@ function drawHeartAsLines(segments = 600, animate = true) {
   }
 }
 
-// عرض صورة الحب
 function showLoveImage(points) {
   const bbox = {
     minX: Infinity,
@@ -126,9 +121,7 @@ function showLoveImage(points) {
   loveImg.classList.add("show");
 }
 
-// رسم الأسهم والحروف
 function drawArrowsAndLetters(points) {
-  // مركز القلب
   let centerX = 0,
     centerY = 0;
   points.forEach((p) => {
@@ -142,12 +135,10 @@ function drawArrowsAndLetters(points) {
   ctx.fillStyle = "white";
   ctx.lineWidth = 3;
 
-  // سهم منحني يمين
   ctx.beginPath();
   ctx.moveTo(centerX + 100, centerY - 120); // نقطة البداية خارج القلب
   ctx.quadraticCurveTo(centerX + 30, centerY, centerX + 50, centerY + 10); // نقطة التحكم
   ctx.stroke();
-  // رأس السهم
   ctx.beginPath();
   ctx.moveTo(centerX + 50, centerY + 10);
   ctx.lineTo(centerX + 40, centerY);
@@ -155,12 +146,10 @@ function drawArrowsAndLetters(points) {
   ctx.closePath();
   ctx.fill();
 
-  // سهم منحني يسار
   ctx.beginPath();
   ctx.moveTo(centerX - 100, centerY - 120);
   ctx.quadraticCurveTo(centerX - 30, centerY, centerX - 50, centerY + 10);
   ctx.stroke();
-  // رأس السهم
   ctx.beginPath();
   ctx.moveTo(centerX - 50, centerY + 10);
   ctx.lineTo(centerX - 60, centerY);
@@ -168,13 +157,11 @@ function drawArrowsAndLetters(points) {
   ctx.closePath();
   ctx.fill();
 
-  // الحروف
   ctx.font = "bold 32px sans-serif";
   ctx.fillText("A", centerX + 105, centerY - 120);
   ctx.fillText("R", centerX - 130, centerY - 120);
 }
 
-// confetti
 function celebrate() {
   const confetti = [];
   const colors = ["#ff4d4d", "#ffd633", "#66ff66", "#3399ff", "#ff66cc"];
@@ -213,7 +200,6 @@ function celebrate() {
   drawConfetti();
 }
 
-// التحكم
 function start() {
   animRunning = true;
   ctx.clearRect(0, 0, W, H);
@@ -236,7 +222,6 @@ segInput.addEventListener("change", () => {
   setTimeout(() => start(), 60);
 });
 
-// أزرار الحب
 yesBtn.addEventListener("click", () => {
   loveBtns.style.display = "none";
   controls.style.display = "flex";
@@ -251,3 +236,4 @@ noBtn.addEventListener("click", () => {
   sadImg.classList.add("show");
   ha.style.display = "none";
 });
+
