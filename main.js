@@ -120,8 +120,7 @@ function showLoveImage(points) {
   });
   const width = bbox.maxX - bbox.minX;
   const height = bbox.maxY - bbox.minY;
-  loveImg.style.width = width + "px";
-  loveImg.style.height = height + "px";
+  loveImg.style.width = "370px";
   loveImg.classList.add("show");
 }
 
