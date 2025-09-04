@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(180deg, #111, #2b0b0b);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+  background: transparent;
+  display: block;
+  width: 500px;
+  max-width: 600px;
+  height: auto;
+}
+
+.love {
+  position: relative;
+  top: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  background: linear-gradient(90deg, #ff4d4d, #b30000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.love-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.yes {
+  position: relative;
+  background: linear-gradient(90deg, #ff4d4d, #b30000);
+  color: white;
+  top: 170px;
+  left: -50px;
+}
+.yes:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.7);
+}
+
+.no {
+  background: linear-gradient(90deg, #333, #000);
+  color: #fff;
+  position: relative;
+  top: 170px;
+  left: 50px;
+}
+.no:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+}
+
+.controls {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+label {
+  font-size: 14px;
+}
+input[type="range"] {
+  width: 160px;
+}
+
+#loveImg,
+#sadImg {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: opacity 2s ease-in-out, width 1s ease-in-out,
+    height 1s ease-in-out;
+  z-index: 10;
+  filter: brightness(0) invert(1);
+}
+
+#sadImg {
+  filter: none;
+}
+
+#loveImg.show,
+#sadImg.show {
+  display: block;
+  opacity: 0.6;
+}
+
+/* الحروف فوق القلب */
+#letters span {
+  position: absolute;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  display: none; /* مخفية افتراضياً */
+  z-index: 20; /* فوق الصورة */
+}
+
+#letterA {
+  top: 40%;
+  left: 65%;
+}
+#letterR {
+  top: 40%;
+  left: 10%;
+}

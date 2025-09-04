@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Love Animation</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+  <h2 class="love" id="Ha">Do You Love Me</h2>
+
+  <div class="love-buttons">
+    <button class="yes">Yes ,I Love You</button>
+    <button class="no">No ,I Hate You</button>
+  </div>
+
+  <canvas id="c" width="520" height="520"></canvas>
+
+  <!-- صورة الحب -->
+  <img id="loveImg" src="love.png" alt="In Love">
+
+  <!-- صورة الحزن -->
+  <img id="sadImg" src="sad.png" alt="Sad" width="400px">
+
+  <div class="controls">
+    <label><strong style="font-size: large; font-family:Verdana, Geneva, Tahoma, sans-serif;">Stroke</strong>
+      <input id="segments" type="range" min="50" max="2000" value="600">
+    </label>
+    <button id="restart">ReDraw</button>
+    <button id="toggleAnim">Stop Move</button>
+  </div>
+
+  <script src='main.js'></script>
+</body>
+
+</html>
