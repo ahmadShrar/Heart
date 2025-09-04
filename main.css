@@ -14,7 +14,7 @@ body {
 canvas {
   background: transparent;
   display: block;
-  width: 480px;
+  width: 450px;
   max-width: 600px;
   height: auto;
 }
@@ -77,7 +77,7 @@ button {
   color: #fff;
   position: relative;
   top: 170px;
-  left: 50px;
+  left: 20px;
 }
 .no:hover {
   transform: scale(1.1);
@@ -100,7 +100,17 @@ input[type="range"] {
   width: 160px;
 }
 
-#loveImg,
+#loveImg{
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: opacity 2s ease-in-out, width 1s ease-in-out,
+    height 1s ease-in-out;
+  z-index: 10;
+  filter: brightness(0) invert(1);
+}
 #sadImg {
   position: absolute;
   top: 59%;
@@ -112,7 +122,6 @@ input[type="range"] {
   z-index: 10;
   filter: brightness(0) invert(1);
 }
-
 #sadImg {
   filter: none;
 }
