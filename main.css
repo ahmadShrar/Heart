@@ -132,14 +132,13 @@ input[type="range"] {
   opacity: 0.6;
 }
 
-/* الحروف فوق القلب */
 #letters span {
   position: absolute;
   color: white;
   font-size: 32px;
   font-weight: bold;
-  display: none; /* مخفية افتراضياً */
-  z-index: 20; /* فوق الصورة */
+  display: none; 
+  z-index: 20; 
 }
 
 #letterA {
@@ -150,3 +149,4 @@ input[type="range"] {
   top: 40%;
   left: 10%;
 }}
+
