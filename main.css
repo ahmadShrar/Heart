@@ -67,6 +67,7 @@ button {
   top: 170px;
   left: -5px;
 }
+
 .yes:hover {
   transform: scale(1.1);
   box-shadow: 0 0 12px rgba(255, 77, 77, 0.7);
@@ -79,6 +80,7 @@ button {
   top: 170px;
   left: 20px;
 }
+
 .no:hover {
   transform: scale(1.1);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
@@ -96,11 +98,12 @@ button {
 label {
   font-size: 14px;
 }
+
 input[type="range"] {
   width: 160px;
 }
 
-#loveImg{
+#loveImg {
   position: absolute;
   top: 59%;
   left: 50%;
@@ -121,6 +124,10 @@ input[type="range"] {
     height 1s ease-in-out;
   z-index: 10;
 }
+#loveImg {
+  filter: brightness(0) invert(1);
+}
+
 #sadImg {
   filter: none;
 }
@@ -130,23 +137,3 @@ input[type="range"] {
   display: block;
   opacity: 0.6;
 }
-
-#letters span {
-  position: absolute;
-  color: white;
-  font-size: 32px;
-  font-weight: bold;
-  display: none; 
-  z-index: 20; 
-}
-
-#letterA {
-  top: 40%;
-  left: 65%;
-}
-#letterR {
-  top: 40%;
-  left: 10%;
-}}
-
-
